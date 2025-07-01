@@ -62,7 +62,7 @@ fig.tight_layout()
 
 ## Results
 
-![Visualization for Top Skills in Data Roles:](Images\output_2.png)
+![Visualization for Top Skills in Data Roles:](Images/output_2.png)
 
 ## Insights
 
@@ -106,7 +106,7 @@ plt.show()
 
 ## Results
 
-![Visualization](Images\output_3.png)
+![Visualization](Images/output_3.png)
 
 ## Insights
 
@@ -140,7 +140,7 @@ plt.show()
 
 ## Results
 
-![Visualization](Images\output_4.png)
+![Visualization](Images/output_4.png)
 
 ## Insights
 
@@ -193,7 +193,7 @@ plt.show()
 
 ## Results
 
-![Visualization](Images\output_4_2.png)
+![Visualization](Images/output_4_2.png)
 
 ## Insights
 
@@ -245,7 +245,7 @@ plt.show()
 
 ## Results
 
-![Visualization for Top Skills in Data Roles:](Images\output_5.png)
+![Visualization for Top Skills in Data Roles:](Images/output_5.png)
 
 ## Insights
 1. Power BI and Tableau are the most optimal skills — offering high salaries (~$110K) despite moderate popularity (~20–25%).
