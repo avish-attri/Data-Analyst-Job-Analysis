@@ -74,7 +74,7 @@ fig.tight_layout()
 
 ## 2. How are in-demand skills trending for Data Analysts?
 
-I analyzed job postings to identify the most in-demand skills for Data Analyst roles in India. I filtered and extracted the top skills by month, and visualized trends to understand how skill demand changes over time. This helps highlight which skills are most valuable for aspiring data professionals to focus on.
+I analyzed job postings to identify the most in-demand skills for Data Analyst roles in United States. I filtered and extracted the top skills by month, and visualized trends to understand how skill demand changes over time. This helps highlight which skills are most valuable for aspiring data professionals to focus on.
 
 
 
@@ -83,12 +83,12 @@ View my full notebook here: [3_Skills_Trend.ipynb](3_Skills_Trend.ipynb)
 ## Visualize data
 
 ```python
-df_plot = df_IN_pivot_sorted.iloc[:,:5]
+df_plot = df_US_pivot_sorted.iloc[:,:5]
 sns.lineplot(df_plot,dashes=False,palette='tab10')
 sns.set_theme(style='ticks')
 sns.despine()
 
-plt.title('Top skills for Data Analyst in India')
+plt.title('Top skills for Data Analyst in United States')
 plt.xlabel('')
 plt.ylabel('Likelihood in Job Posting')
 plt.legend().remove()
@@ -118,14 +118,14 @@ plt.show()
 
 ## 3. How well do jobs and skills pay for Data Analyst?
 
-This section visualizes the yearly salary distribution (in USD) for various data roles in India, including Data Analyst, Data Scientist, Data Engineer, and Senior positions. The chart highlights the median, interquartile range, and outliers for each role, giving a comparative view of compensation.
+This section visualizes the yearly salary distribution (in USD) for various data roles in United States, including Data Analyst, Data Scientist, Data Engineer, and Senior positions. The chart highlights the median, interquartile range, and outliers for each role, giving a comparative view of compensation.
 
 View my full notebook here: [4_Salary_Analysis.ipynb](4_Salary_Analysis.ipynb)
 
 ## Visualize data
 
 ```python
-sns.boxplot(df_IN_5,x='salary_year_avg',y='job_title_short', order=df_IN_5_order)
+sns.boxplot(df_US_5,x='salary_year_avg',y='job_title_short', order=df_US_5_order)
 sns.set_theme(style='ticks')
 
 ax = plt.gca().xaxis
@@ -134,7 +134,7 @@ ax2.set_label_text('')
 ax.set_label_text('Yearly Salary (USD)')
 ax.set_major_formatter(plt.FuncFormatter(lambda x,pos: f'${int(x/1000)}K'))
 plt.xlim(0,300000)
-plt.title('Salary Distribution in India')
+plt.title('Salary Distribution in United States')
 plt.show()
 ```
 
@@ -170,7 +170,7 @@ fig, ax = plt.subplots(2,1)
 sns.set_theme(style='ticks')
 
 
-sns.barplot(data=df_IN_top_payed, x='median', y=df_IN_top_payed.index, ax=ax[0], hue='median', palette='dark:b')
+sns.barplot(data=df_US_top_payed, x='median', y=df_US_top_payed.index, ax=ax[0], hue='median', palette='dark:b')
 ax[0].invert_yaxis()
 ax[0].set_title('Top 10 Highest Paying Skills for Data Analyst')
 ax[0].set_ylabel('')
@@ -179,7 +179,7 @@ ax[0].legend().remove()
 ax[0].set_xlim(0,200000)
 
 
-sns.barplot(df_IN_popular, x='median', y=df_IN_popular.index, ax=ax[1], hue='median', palette='dark:b_r')
+sns.barplot(df_US_popular, x='median', y=df_US_popular.index, ax=ax[1], hue='median', palette='dark:b_r')
 
 ax[1].set_title('Top 10 Popular Skills for Data Analyst')
 ax[1].set_xlim(ax[0].get_xlim())
@@ -224,11 +224,11 @@ View my full notebook here: [5_Optimal_Skills.ipynb](5_Optimal_Skills.ipynb)
 
 ```python
 
-df_IN_top.plot(kind='scatter',x='Skills Percentage', y='median')
+df_US_top.plot(kind='scatter',x='Skills Percentage', y='median')
 
 texts = []
-for i,text in enumerate(df_IN_top.index):
-    texts.append(plt.text(df_IN_top['Skills Percentage'].iloc[i]+1,df_IN_top['median'].iloc[i],text))
+for i,text in enumerate(df_US_top.index):
+    texts.append(plt.text(df_US_top['Skills Percentage'].iloc[i]+1,df_US_top['median'].iloc[i],text))
 
 ax = plt.gca()
 ax.set_ylabel('Median Yearly Salary')
@@ -238,7 +238,7 @@ from matplotlib.ticker import PercentFormatter
 ax.xaxis.set_major_formatter(PercentFormatter(decimals=0))
 ax.set_xlim(0,60)
 
-plt.title('Most Optimal Skills For Data Analyst in India')
+plt.title('Most Optimal Skills For Data Analyst in United States')
 plt.show()
 
 ```
